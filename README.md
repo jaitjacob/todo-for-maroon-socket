@@ -1,4 +1,6 @@
-# 🌟 Todo App for Maroon Socket 🌟
+# 🌟 Todo App for hackathon team Maroon Socket 🌟
+
+**do not contribute to this repository if you're not a member of maroon socket**
 
 ## 🚀 Steps to Run
 
