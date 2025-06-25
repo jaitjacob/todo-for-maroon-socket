@@ -3,7 +3,8 @@
 **do not contribute to this repository if you're not a member of maroon socket**
 
 ## Figma design link
-   [click here](https://www.figma.com/design/WWQzrtHEoDjaXymKymbDIF/To-do-list-_Maroon-Socket?node-id=0-1&p=f)
+
+[click here](https://www.figma.com/design/WWQzrtHEoDjaXymKymbDIF/To-do-list-_Maroon-Socket?node-id=0-1&p=f)
 
 ## 🚀 Steps to Run
 
