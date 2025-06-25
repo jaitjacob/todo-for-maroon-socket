@@ -1,5 +1,9 @@
 # 🌟 Todo App for Maroon Socket 🌟
 
+## Figma Design
+
+Checkout the Figma design [here](https://www.figma.com/design/WWQzrtHEoDjaXymKymbDIF/To-do-list-_Maroon-Socket?node-id=1-76&t=XQs4uQNEyhKe8b3K-0).
+
 ## 🚀 Steps to Run
 
 1. **Clone the Repository:**
