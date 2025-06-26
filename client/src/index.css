@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-    background-image: url('./assets/main-bg.svg');
-    background-size: cover;
-    background-color: #ff6767;
-    padding: 3rem 6rem;
+  background-image: url('./assets/main-bg.svg');
+  background-size: cover;
+  background-color: #ff6767;
+  padding: 3rem 6rem;
 }
