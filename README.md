@@ -14,24 +14,50 @@
    git clone https://github.com/jaitjacob/todo-for-maroon-socket.git
    ```
 
-2. **Navigate to the Client Folder(Front End):**
+2. **Navigate to the Server Folder (Back End):**
 
    ```bash
-   cd client
+   cd server
    ```
 
-3. **Install Dependencies:**
+3. **Create a .env file:**
+
+   ```bash
+   cp .env.example .env
+   ```
+
+4. **Install Dependencies:**
 
    ```bash
    npm install
    ```
 
-4. **Start the App:**
+5. **Start the Server:**
 
    ```bash
    npm run dev
    ```
 
-🔗 **Open your browser** at `http://localhost:5173` to see the app in action.
+   🔗 **Open your browser** at `http://localhost:3000` to see the server in action.
+
+6. **Navigate to the Client Folder(Front End):**
+
+   ```bash
+   cd client
+   ```
+
+7. **Install Dependencies:**
+
+   ```bash
+   npm install
+   ```
+
+8. **Start the App:**
+
+   ```bash
+   npm run dev
+   ```
+
+   🔗 **Open your browser** at `http://localhost:5173` to see the client in action.
 
 ✨ Happy Testing Maroon Socket! 🚀
