@@ -1,10 +1,12 @@
 import express from 'express';
 import todoRoutes from './routes/todoRoutes.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const app = express();
 
-const host = 'localhost';
-const port = 3000;
+const PORT = process.env.PORT || 3000;
+const HOST = process.env.HOST || 'localhost';
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -15,6 +17,6 @@ app.get('/', (req, res) => {
   res.send('todo server is online');
 });
 
-app.listen(port, () => {
-  console.log(`server listening on ${host}:${port}`);
+app.listen(PORT, () => {
+  console.log(`server listening on ${HOST}:${PORT}`);
 });
