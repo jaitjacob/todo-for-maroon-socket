@@ -1,6 +1,7 @@
 import sqlite3 from 'sqlite3';
 import path from 'path';
 
+const __dirname = import.meta.dirname;
 const DB_PATH = path.join(__dirname, 'todoapp.db');
 
 let db = new sqlite3.Database(DB_PATH, (err) => {
@@ -26,7 +27,7 @@ let db = new sqlite3.Database(DB_PATH, (err) => {
 
     db.run(
       `CREATE TABLE IF NOT EXISTS profiles(
-                  id INTEGER PRIMARY KEY AUTO INCREMENT,
+                  id INTEGER PRIMARY KEY AUTOINCREMENT,
                   user_id INTEGER UNIQUE NOT NULL,
                   name TEXT,
                   email TEXT UNIQUE NOT NULL,
@@ -40,5 +41,24 @@ let db = new sqlite3.Database(DB_PATH, (err) => {
         }
       }
     );
+
+    db.run(
+      `CREATE TABLE IF NOT EXISTS todos(
+                  id INTEGER PRIMARY KEY AUTOINCREMENT,
+                  user_id INTEGER NOT NULL,
+                  title TEXT NOT NULL,
+                  completed NUMBER,
+                  FOREIGN KEY(user_id) REFERENCES users(id)
+          )`, // ^ON DELETE CASCADE ensures profile data is deleted if the associated user is removed.
+      (err) => {
+        if (err) {
+          console.log('could NOT create PROFILES table.');
+        } else {
+          console.log('TODOS table created OR already exists.');
+        }
+      }
+    );
   }
 });
+
+export default db;
