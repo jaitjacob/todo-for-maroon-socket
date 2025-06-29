@@ -1,6 +1,7 @@
 import sqlite3 from 'sqlite3';
 import path from 'path';
 
+const __dirname = import.meta.dirname;
 const DB_PATH = path.join(__dirname, 'todoapp.db');
 
 let db = new sqlite3.Database(DB_PATH, (err) => {
@@ -26,7 +27,7 @@ let db = new sqlite3.Database(DB_PATH, (err) => {
 
     db.run(
       `CREATE TABLE IF NOT EXISTS profiles(
-                  id INTEGER PRIMARY KEY AUTO INCREMENT,
+                  id INTEGER PRIMARY KEY AUTOINCREMENT,
                   user_id INTEGER UNIQUE NOT NULL,
                   name TEXT,
                   email TEXT UNIQUE NOT NULL,
@@ -42,3 +43,5 @@ let db = new sqlite3.Database(DB_PATH, (err) => {
     );
   }
 });
+
+export default db;
