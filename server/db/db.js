@@ -41,6 +41,23 @@ let db = new sqlite3.Database(DB_PATH, (err) => {
         }
       }
     );
+
+    db.run(
+      `CREATE TABLE IF NOT EXISTS todos(
+                  id INTEGER PRIMARY KEY AUTOINCREMENT,
+                  user_id INTEGER NOT NULL,
+                  title TEXT NOT NULL,
+                  completed NUMBER,
+                  FOREIGN KEY(user_id) REFERENCES users(id)
+          )`, // ^ON DELETE CASCADE ensures profile data is deleted if the associated user is removed.
+      (err) => {
+        if (err) {
+          console.log('could NOT create PROFILES table.');
+        } else {
+          console.log('TODOS table created OR already exists.');
+        }
+      }
+    );
   }
 });
 
