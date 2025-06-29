@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {Link} from 'react-router-dom';
 import { FaUserEdit, FaUser, FaLock, FaEnvelope } from 'react-icons/fa';
 import { Lock } from 'react-feather';
 import signup from '../assets/Signup.jpg';
@@ -155,7 +156,7 @@ const SignUp = () => {
 
           <div className="flex justify-center gap-1">
             <p className="text-sm">Already have an account?</p>
-            <p className="text-sm text-blue-500 cursor-pointer">Sign in</p>
+            <p className="text-sm text-blue-500 cursor-pointer"><Link to="/">Sign in</Link></p>
           </div>
         </form>
       </div>

@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom';
 import {FaUser,FaLock, FaFacebook, FaGoogle} from "react-icons/fa"
 import login from "../assets/login.jpg";
 
@@ -43,7 +44,7 @@ const Login = ()=>{
                 </div>
                 <div className="flex justify-center gap-1">
                     <p className="text-sm">Don't have an account?</p>
-                    <p className="text-sm text-blue-500 cursor-pointer"> Create One</p> 
+                    <p className="text-sm text-blue-500 cursor-pointer"><Link to="/signup"> Create One</Link></p> 
                 </div>
             </div>
 
