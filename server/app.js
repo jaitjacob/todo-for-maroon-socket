@@ -1,6 +1,7 @@
 import express from 'express';
-import todoRoutes from './routes/todoRoutes.js';
 import dotenv from 'dotenv';
+import todoRoutes from './routes/todoRoutes.js';
+import healthRouter from './routes/healthRoutes.js';
 dotenv.config();
 
 const app = express();
@@ -11,6 +12,7 @@ const HOST = process.env.HOST || 'localhost';
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use("/api/health", healthRouter)
 app.use('/api/todos', todoRoutes);
 
 app.get('/', (req, res) => {
