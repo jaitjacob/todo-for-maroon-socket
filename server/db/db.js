@@ -13,31 +13,15 @@ let db = new sqlite3.Database(DB_PATH, (err) => {
     db.run(
       `CREATE TABLE IF NOT EXISTS users(
               id INTEGER PRIMARY KEY AUTOINCREMENT,
-              username UNIQUE NOT NULL,
+              username TEXT UNIQUE NOT NULL,
+              email TEXT UNIQUE NOT NULL, 
               password TEXT NOT NULL
         )`,
       (err) => {
         if (err) {
           console.error('could NOT create USERS table.');
         } else {
-          console.log('users table created OR already exists.');
-        }
-      }
-    );
-
-    db.run(
-      `CREATE TABLE IF NOT EXISTS profiles(
-                  id INTEGER PRIMARY KEY AUTOINCREMENT,
-                  user_id INTEGER UNIQUE NOT NULL,
-                  name TEXT,
-                  email TEXT UNIQUE NOT NULL,
-                  FOREIGN KEY(user_id) REFERENCES users(id)
-          )`, // ^ON DELETE CASCADE ensures profile data is deleted if the associated user is removed.
-      (err) => {
-        if (err) {
-          console.log('could NOT create PROFILES table.');
-        } else {
-          console.log('PROFILES table created OR already exists.');
+          console.log('USERS table created OR already exists.');
         }
       }
     );
@@ -52,7 +36,7 @@ let db = new sqlite3.Database(DB_PATH, (err) => {
           )`, // ^ON DELETE CASCADE ensures profile data is deleted if the associated user is removed.
       (err) => {
         if (err) {
-          console.log('could NOT create PROFILES table.');
+          console.log('could NOT create TODOS table.');
         } else {
           console.log('TODOS table created OR already exists.');
         }
